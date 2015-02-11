@@ -1,0 +1,429 @@
+/* General Demo Style */
+/* Reset */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+html { font-size: 100%; height: 100%; overflow: hidden;}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Lato';
+}
+
+/*====================================
+=            Index.html Page CSS            =
+====================================*/
+
+.sidebar{
+  top:0%;
+  left:0%;
+  height: 100%; 
+  width: 19.5%;
+  position: absolute;
+}
+
+.contentPage{
+  top:0%;
+  left:19.5%;
+  height: 100%;
+  width: 80.5%;  
+  position: absolute;
+  background: #cfcfcf;
+  overflow: hidden;
+}
+
+
+/*===========================================
+=           Dashbaord.html page CSS            =
+===========================================*/
+
+.main{
+  top:0%;
+  left:0%;
+  height: 100%; 
+  width: 19.5%;
+  background: #323436;
+  position: absolute;
+}
+
+#dashboard{
+  top:0%;
+  left:19.5%;
+  height: 100%;
+  width: 80.5%;   
+  position: absolute;
+  background: #cfcfcf;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  float: left;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+}
+
+#chart1{
+  left:0;
+  top:0;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  background: lightseagreen;
+
+}
+
+#chart2{
+  top:0;
+  left:50%;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  background: lightblue;
+}
+
+#chart3{
+  left:50%;
+  top:50%;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  background: lightpink;
+
+}
+
+#chart4{
+  top:50%;
+  left:0;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  background: lightyellow;
+}
+
+/*===========================================
+=           Left Menu page CSS            =
+===========================================*/
+
+.container > header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1.875em 3.125em 1.875em;
+  /*padding: 2.875em 1.875em 1.875em;*/
+}
+
+.container > header h1 {
+  font-size: 2.125em;
+  line-height: 1.3;
+  margin: 0;
+  float: left;
+  font-weight: 400;
+}
+
+.container > header span {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  padding: 0 0 0.6em 0.1em;
+}
+
+.container > header nav {
+  float: right;
+}
+
+.container > header nav a {
+  float: left;
+  width: 2.5em;
+  height: 2.5em;
+  display: block;
+  margin: 0 0.1em;
+  background: #fff;
+  position: relative;
+  border-radius: 50%;
+  color: transparent;
+  text-indent: -8000px;
+  border: 4px solid #47a3da;
+}
+
+.container > header nav a:after {
+  right: 0;
+  top: 120%;
+  opacity: 0;
+  width: 600%;
+  color: #47a3da;
+  text-align: right;
+  position: absolute;
+  pointer-events: none;
+  content: attr(data-info);
+}
+
+.container > header nav a:hover:after {
+}
+
+.container > header nav a:hover {
+  background: #47a3da;
+}
+
+section {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-weight: 300;
+  color: #ccc;
+}
+
+section button {
+  border:hidden;
+  outline:none;
+  padding: 3.5em;
+  cursor: pointer;
+  margin: 10px 0;
+  position:relative;
+  background:transparent;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../images/Menu-Icon.svg');   
+}
+
+.main > section button:hover {
+  opacity: .5;
+  text-decoration:none;
+}
+
+.main > section button.active {
+  opacity: .5;
+}
+
+.main > section button.disabled {
+  opacity: 1;
+}
+
+.container > header nav a:hover:before {
+  color: #fff;
+}
+
+.buttonset{
+  text-align: center;
+}
+
+.buttonset h1{
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #e4e7e9;
+}
+.buttonset h3{
+  text-align: left;
+  color: #e4e7e9;
+  margin: 23px;
+  font-weight: 100;
+  color: #e4e7e9;
+  margin-top: -15px;
+}
+.buttonset h2{
+  text-align: center;
+  font-size: 2.25em;
+  font-weight: 300;
+  color: #4CAE60;
+  margin-top: 25px;
+}
+.buttonset p{ 
+  text-align: left;
+  color: #e4e7e9;
+  margin: 23px;
+  font-weight: 100;
+  font-size: 80%;
+  text-transform: uppercase;
+}
+
+#compareZip{
+  color:#4ECECB;
+}
+
+.icon-drop:before {
+  content: "\e000";
+}
+
+.icon-arrow-left:before {
+  content: "\f060";
+}
+
+.buttonset{
+  padding: 35px 0px 0px 0px;
+}
+
+.menu-Logo{
+  padding: 0em;
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+  .hex-wrapper {
+    left:310px;
+  }
+  .hexNav{
+    background-position: -285px -25px;
+  }
+  .main > section button {
+    margin-left: -10px;
+  }
+}
+
+/* General styles for all menus */
+.spmenu {
+  background: #323436;
+  position: fixed;
+}
+
+.spmenu h3 {
+  padding: 3.15em;
+  margin: .3em;
+  font-size: 20px;
+  text-align: center;
+  background: lightblue;
+}
+
+.spmenu a {
+  background: lightgreen;
+  display: block;
+  font-size: 1.1em;
+  font-weight: 300;
+  
+} 
+
+.spmenu a:hover {
+}
+
+.spmenu a:active {
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.spmenu-vertical {
+  top: 0;
+  width: 19.5%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.nav-menu{
+  width: 19.5%;
+}
+
+.spmenu-vertical a {
+  padding: 2.15em;
+  margin: .3em;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.spmenu-left {
+  left: -19.5%;
+}
+
+
+.spmenu-left.spmenu-open {
+  left: 0px;
+}
+
+.spmenu-right.spmenu-open {
+  right: 0px;
+}
+
+
+/* Push classes applied to the body */
+
+.spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.spmenu-push-toright {
+  left: 250px;
+}
+
+.spmenu-push-toleft {
+  left: -250px;
+}
+
+/* Transitions */
+
+.spmenu,
+.spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+  .spmenu-horizontal {
+    font-size: 75%;
+    height: 110px;
+  }
+
+}
+
+@media screen and (max-height: 26.375em){
+
+  .spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+
+  .spmenu-left,
+  .spmenu-push-toleft {
+    left: -190px;
+  }
+
+  .spmenu-right {
+    right: -190px;
+  }
+
+  .spmenu-push-toright {
+    left: 190px;
+  }
+}
