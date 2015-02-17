@@ -1,0 +1,302 @@
+html{
+    height: 100%;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    cursor: default;
+    font-size: 2em;
+    background: #F4F4F4;
+    text-align: center;
+    font-family: 'Raleway', sans-serif; 
+    cursor: default;
+}
+
+/*===========================================
+=            Content Page CSS            =
+===========================================*/
+
+#content {
+  margin: auto;
+}
+#mainDiv {
+  clear:none;
+  float: left;
+  width: 832px;
+  height: 100%;
+  position: relative;
+  background: #FFFFFF;
+}
+#leftSidebarDiv {
+  clear:none;
+  float:left;
+  width: 192px;
+  height: 100%;
+  position:relative;
+  background : #83ffdc;
+}
+#button_1,
+#button_2,
+#button_3,
+#button_4{
+  clear:left;
+  float:left;
+  width:192px;
+  height: 170px;
+  z-index: 100;
+}
+#button_1{
+  background: lightgrey;
+}
+#button_2{
+  background: lightblue;
+}
+#button_3{
+  background: lightgreen;
+}
+#button_4{
+  background: lightpink;
+}
+#button_1:hover{
+  background: grey;
+}
+#button_2:hover{
+  background: blue;
+}
+#button_3:hover{
+  background: green;
+}
+#button_4:hover{
+  background: red;
+}
+
+.hide {
+  display : none;
+}
+
+/*==========  Main Container Class  ==========*/
+#container{
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  height:680px;
+  width: 832px;
+  overflow: auto;
+  position: absolute;
+  background:grey;
+}
+#appTitle{
+  height: 40px;
+  width: 250px;
+  top: 10px;
+  left: 50px;
+  z-index: 10;
+  overflow: auto;
+  font-size: 2em;
+  text-align: left;
+  font-size: 40px;
+  font-weight: 300;
+  position: absolute;
+  text-transform: uppercase;
+  background: #5b67b2;
+}
+
+#nextButton {
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  height: 33px;
+  width: 149px;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 33px;
+  font-weight: 700;
+  text-align: right;
+  padding-right: 50px;
+  position: absolute;
+  background: lightyellow;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#backButton {
+  top: 15px;
+  z-index: 10;
+  right: 180px;
+  height: 33px;
+  width: 149px;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 33px;
+  font-weight: 700;
+  text-align: left;
+  padding-left: 50px;
+  position: absolute;
+  background: lightcoral;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#chart_1 {
+  top: 60px;
+  left: 50px;
+  z-index: 10;
+  height: 70px;
+  width: 732px;
+  overflow: auto;
+  position: absolute;
+  background: lightseagreen;
+}
+#chart_2 {
+  top: 145px;
+  left: 50px;
+  z-index: 10;
+  width: 575px;
+  height: 245px;
+  overflow: auto;
+  position: absolute;
+  background: lightyellow;
+}
+#chart_3 {
+  top: 415px;
+  left: 50px;
+  z-index: 10;
+  width: 575px;
+  height: 250px;
+  overflow: auto;
+  position: absolute;
+  background: lightgrey;
+}
+#chart_4 {
+  top: 145px;
+  right: 50px;
+  width: 130px;
+  height: 520px;
+  overflow: auto;
+  position: absolute;
+  background: lightgreen;
+}
+#timeStamp {
+  bottom: 15px;
+  right: 20px;
+  width: 200px;
+  height: auto;
+  font-size: 8px;
+  text-align: right;
+  overflow: auto;
+  position: absolute;
+  color: #999999;
+}
+
+/*======================================
+=            Desktop Fullscreen     =
+======================================*/
+@media only screen and (min-width : 1025px) {
+  /* Styles */
+  #content {
+    width: 1216px;
+    height: 100%;
+  }
+  #rightSidebarDiv{
+    clear:none;
+    float:right;
+    width   : 192px;
+    min-height: 100%;
+    background : #958ff5;
+    position:relative;
+  }
+}
+
+/*======================================
+=            Ipad/Tablet Landscape      =
+======================================*/
+@media only screen and (min-width : 801px) and (max-width : 1024px){
+  
+  #content {
+    width: 1024px;
+    height: 100%;
+  }
+}
+
+/*======================================
+=            Ipad/Tablet Portrait      =
+======================================*/
+
+@media only screen and (max-width : 800px) and (min-width : 641px){
+  /*===========================================
+  =            Content Page CSS            =
+  ===========================================*/
+  #content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  #mainDiv {
+    clear: none;
+    clear:left;
+    width: 100%;
+    height: 768px;
+    position: absolute;
+  }
+  #leftSidebarDiv {
+    clear:left;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    height: 18.75%;
+    position:absolute;
+  }
+  #button_1,
+  #button_2,
+  #button_3,
+  #button_4{
+      width:25%;
+      clear:none;
+      height: 192px;
+  }
+  #container{
+    width: 100%;
+    height:100%;
+  }
+  #appTitle{
+    top: 65px;
+    left: 15px;
+  }
+  #chart_1 {
+    top: 130px;
+    left: 18px;
+  }
+  #nextButton{
+    right : 5px;
+  }
+  #backButton{
+    right : 165px;
+  }
+  #chart_2 {
+    top: 220px;
+    left: 18px;
+  }
+  #chart_3 {
+    top: 490px;
+    left: 18px;
+  }
+  #chart_4 {
+    top: 220px;
+    left: 620px;
+  }
+}
+
+
+/*======================================
+=            Phone Design CSS      =
+======================================*/
+@media only screen and (max-width : 640px) and (orientation : portrait) {
+
+}
+
+@media only screen and (max-width : 640px) and (orientation : landscape) {
+
+}
