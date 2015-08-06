@@ -1,0 +1,188 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <!--- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Signup Modal Window</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Script
+  ================================================== -->
+
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="imgs/favicon.ico">
+</head>
+
+<body>  
+  <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
+
+  <!-- Header of website -->
+  <header>
+    <h3>Signup Modal Window</h3>
+  </header>
+
+  <!-- Home page layout with open button -->
+  <div class="main-container">
+
+    <div class="floating-container">
+      <a href="#" class="btn open-btn">Open Modal</a>
+    </div>
+
+    <!-- Modalbox inforamtion -->
+    <div class="modal">
+      <a href="#" id="close-modal" class="close"></a>
+      <div class="modal-content">
+        <h1>Assign Desktops</h1>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab">
+            <input type="radio" id="tab-1" name="tab-group" checked>
+            <label for="tab-1">1. Defination</label>
+            <div class="tab-content">
+
+              <!-- First Section of modal -->
+              <div class="modal-sec1">
+                <p class="text-container">Type:</p>
+                <div class="type-selector">
+                  <!--Type 1-->
+                  <input type="radio" class="type-radio" value="" name="VMType" id="dedicated-type">
+                  <label class="dedicated-type" for="dedicated-type"><a class="type-title">Dedicated</a>
+                  </label>
+
+                  <!--Type 2-->
+                  <input type="radio" class="type-radio" value="" name="VMType" id="floating-type">
+                  <label class="floating-type" for="floating-type"><a class="type-title">Floating</a>
+                  </label>
+
+                  <!--Type 2-->
+                  <input type="radio" class="type-radio" value="" name="VMType" id="session-type">
+                  <label class="session-type" for="session-type"><a class="type-title">Session</a>
+                  </label>
+                </div>
+              </div>
+              <!-- End of First Section -->
+
+              <!-- Second Section of modal -->
+              <h2>Fixed Attributes</h2>
+              <div class="modal-sec2">
+                <div class="text-container">
+                  <p>Locations:</p>
+                  <p>Levels:</p>
+                  <p>Types:</p>
+                  <p>True/False:</p>
+                </div>
+                <div class="type-selector">
+                  <dl id="country-list" class="dropdown">
+                    <dt><a href="#"><span>San Francisco</span></a></dt>
+                    <dd>
+                      <ul>
+                        <li><a href="#">San Francisco</a>
+                        </li>
+                        <li><a href="#">Los Angeles</a>
+                        </li>
+                        <li><a href="#">Portland</a>
+                        </li>
+                        <li><a href="#">New York</a>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl id="modal-list" class="dropdown">
+                    <dt><a href="#"><span>Standard <span class="details">Option 1</span></span></a></dt>
+                    <dd>
+                      <ul>
+                        <li><a href="#">Basic <span class="details">Option 2</span></a>
+                        </li>
+                        <li><a href="#">Standard <span class="details">Option 3</span></a>
+                        </li>
+                        <li><a href="#">Advance <span class="details">Option 4</span></a>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl id="domain-list" class="dropdown">
+                    <dt><a href="#"><span>Option Alpha</span></a></dt>
+                    <dd>
+                      <ul>
+                        <li><a href="#">Option Beta</a>
+                        </li>
+                        <li><a href="#">Option Gama</a>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- End of second section -->
+
+            </div>
+          </div>
+          <div class="tab">
+            <input type="radio" id="tab-2" name="tab-group">
+            <label for="tab-2">2. Images</label>
+            <div class="tab-content">
+              <p class="placeholder">Images</p>
+            </div>
+          </div>
+          <div class="tab">
+            <input type="radio" id="tab-3" name="tab-group">
+            <label for="tab-3">3. Users</label>
+            <div class="tab-content">
+              <p class="placeholder">Users Stuff</p>
+            </div>
+          </div>
+          <div class="tab">
+            <input type="radio" id="tab-4" name="tab-group">
+            <label for="tab-4">4. Summary</label>
+            <div class="tab-content">
+              <p class="placeholder">Summary</p>
+            </div>
+          </div>
+        </div>
+        <!-- End of Tabs -->
+
+        <!-- Footer navigation button -->
+        <input class="modal-btn cancel-btn" id="close-modal" type="Button" name="Cancel" value="Cancel">
+        <input class="modal-btn" id="next-btn" type="Button" name="Next" value="Next >">
+        <input class="modal-btn" id="back-btn" type="Button" name="Back" value="< Back" disabled>
+        <input class="modal-btn" id="save-btn" type="Button" name="Save" value="Save" disabled>
+
+      </div>
+    </div>
+    <!-- End of ModalBox -->
+  </div>
+  <!-- End of Home page layout -->
+
+  <!-- JavaScript files & Libraries
+  ================================================== -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

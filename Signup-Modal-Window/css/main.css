@@ -1,0 +1,698 @@
+/* ------------------------------------------------------------------ */
+/* Notes about css style guide
+
+-Modal light color for disabled button/tab-bars : #C7D1D6;
+-Modal font color for ligt grey content : #91A0AA;
+-Modal font color for dark grey content : #4E5D6C;
+-Modal font/content/button green color : #6db33f;
+
+#CSS WorkFlow 
+-------------------------------
+- Global custom styles     
+- Home Page Coontainer       
+- ModalBox Global Layout CSS       
+- Tabs Layout  CSS             
+- Modalbox Content  CSS             
+    -VM-Type Radio Button Styling
+    -Dropdown list Styling
+    -Toggle Button Styling
+- Footer Buttons Style             
+- Animation CSS             
+- Media query CSS 
+
+------------------------------------------------------------------ */
+/*=======================================
+=           Global custom styles     =
+=======================================*/
+body {
+  margin:0;
+  padding:0;
+  background:#6A7885;
+  font-family:sans-serif
+}
+
+/*=======================================
+=            Home Page Coontainer       =
+=======================================*/
+header {
+  width:450px;
+  height:50px;
+  margin:auto;
+  color:#FFF;
+  font-size:32px;
+  text-align:center;
+  position:absolute;
+  padding-bottom:250px;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0
+}
+
+.main-container {
+  margin:auto;
+  width:720px;
+  height:540px;
+  padding:15px;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0
+}
+
+.floating-container {
+  width:720px;
+  height:540px;
+  overflow:hidden;
+  position:relative
+}
+
+.floating-container > .btn {
+  left: 285px;
+  position: absolute;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s
+}
+.open-btn {
+  width:150px;
+  height:50px;
+  border:none;
+  color:#6db33f;
+  background:#fff;
+  margin-top:235px;
+  line-height:50px;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.floating-container.open>.btn:before {
+  display:none
+}
+
+/*=======================================
+=            ModalBox Global Layout CSS       =
+=======================================*/
+.modal {
+  z-index:20;
+  top:-100%;
+  width:100%;
+  height:100%;
+  display:none;
+  color:#4E5D6C;
+  position:relative;
+  background-color:#FFF;
+  box-shadow:0 2px 5px rgba(0,0,0,0.4)
+}
+
+.modal>.close {
+  float:right;
+  padding:30px;
+  background:url(../imgs/Close_Available_14p.png) no-repeat center
+}
+
+.modal>.close:hover {
+  cursor:pointer;
+  background-image:url(../imgs/Close_HoverClick_14p.png)
+}
+
+.modal>.modal-content {
+  width:auto;
+  height:auto;
+  padding:25px 30px
+}
+
+/*=============================================
+=            Tabs Layout  CSS             =
+=============================================*/
+.tabs {
+  clear:both;
+  min-height:385px;
+  position:relative;
+  margin:25px 0 0
+}
+
+.tab {
+  float:left;
+  width:150px;
+  padding:0 20px 0 0
+}
+
+.tab:last-child {
+  padding-right:0
+}
+
+.tab>label {
+  display:block;
+  color:#91A0AA;
+  font-size:11px;
+  position:relative;
+  padding-bottom:10px;
+  white-space:nowrap;
+  text-transform:uppercase;
+  border-bottom:5px solid #C7D1D6
+}
+
+.tab>label:before {
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:5px;
+  content:'';
+  display:block;
+  position:absolute;
+  transition:width 0 ease,background 1s ease
+}
+
+.tab>label:after {
+  right:0;
+  bottom:-5px;
+  width:0;
+  height:5px;
+  content:'';
+  display:block;
+  position:absolute;
+  background:#6db33f;
+  transition:width 1s ease
+}
+
+.tab>label:hover:before {
+  width:100%;
+  background:#6db33f;
+  transition:width 1s ease
+}
+
+.tab>label:hover:after {
+  width:100%;
+  background:transparent;
+  transition:all 0 ease
+}
+
+.tab>label:hover,.tab>label:active {
+  color:#6db33f
+}
+
+.tab [type=radio] {
+  display:none
+}
+
+.tab-content {
+  position:absolute;
+  top:30px;
+  left:0;
+  right:0;
+  bottom:0;
+  opacity:0;
+  background:#fff;
+  overflow:hidden;
+  border-bottom:1px solid #C7D1D6
+}
+
+.tab-content > * {
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  position: absolute;
+  left: -400px
+}
+
+[type=radio]:checked + label {
+  z-index:2;
+  color:#6db33f;
+  font-weight:600;
+  border-bottom:5px solid #6db33f
+}
+
+.tab [type=radio]:checked ~ label ~ .tab-content {
+  z-index:1;
+  opacity:1
+}
+
+.tab [type=radio]:checked ~ label ~ .tab-content > * {
+  left:0
+}
+
+/*=============================================
+=            Modalbox Content  CSS             =
+=============================================*/
+.placeholder {
+  width:99%;
+  color:#C7D1D6;
+  font-size:64px;
+  padding:100px 0;
+  text-align:center
+}
+
+h1 {
+  font-size:24px;
+  font-weight:400;
+  margin-top:0
+}
+
+h2 {
+  width:100%;
+  top:125px;
+  font-size:16px;
+  font-weight:400;
+  padding-bottom:5px;
+  border-bottom:1px solid #C7D1D6
+}
+
+p {
+  float:left;
+  clear:both;
+  font-size:14px;
+  margin:14px 0
+}
+
+a {
+  font-size:14px
+}
+
+.modal-sec1,.modal-sec2 {
+  width:100%
+}
+
+.modal-sec1 {
+  top:0;
+  height:110px
+}
+
+.modal-sec2 {
+  top:175px;
+  height:175px
+}
+
+.text-container {
+  float:left;
+  width:145px;
+  padding-left:25px
+}
+
+.type-selector {
+  float:left;
+  width:490px
+}
+
+.modal-sec1 .text-container {
+  margin:50px 0
+}
+
+.modal-sec1 .type-selector {
+  height:110px
+}
+
+.modal-sec2 .type-selector {
+  height:175px;
+  padding-top:5px
+}
+
+/*==========  VM-Type Radio Button Styling  ==========*/
+.type-radio {
+  display:none
+}
+
+.type-title {
+  top:100px;
+  width:80px;
+  color:#4E5D6C;
+  position:absolute;
+  text-align:center
+}
+
+.dedicated-type,.floating-type,.session-type {
+  width:80px;
+  height:80px;
+  float:left;
+  margin:20px 50px 0 0
+}
+
+.type-selector [type=radio]:checked + label {
+  font-weight:400;
+  border:none
+}
+
+.type-radio:checked + .dedicated-type,.dedicated-type:hover {
+  background:url(../imgs/Dedicated_On.png) no-repeat center
+}
+
+.type-radio:checked + .floating-type,.floating-type:hover {
+  background:url(../imgs/Floating_On.png) no-repeat center
+}
+
+.type-radio:checked + .session-type,.session-type:hover {
+  background:url(../imgs/Session_On.png) no-repeat center
+}
+
+.dedicated-type {
+  background:url(../imgs/Dedicated_Off.png) no-repeat center;
+  transition:all .3s ease-in
+}
+
+.floating-type {
+  background:url(../imgs/Floating_Off.png) no-repeat center;
+  transition:all .3s ease-in
+}
+
+.session-type {
+  background:url(../imgs/Session_Off.png) no-repeat center;
+  transition:all .3s ease-in
+}
+
+/*==========  Dropdown list Styling  ==========*/
+.dropdown {
+  margin:0 0 16px
+}
+
+.dropdown dd,.dropdown dt,.dropdown ul {
+  margin:0;
+  padding:0
+}
+
+.dropdown dd {
+  position:relative;
+  z-index:1000
+}
+
+.dropdown a,.dropdown a:visited {
+  outline:none;
+  color:#4E5D6C;
+  text-decoration:none
+}
+
+.dropdown a:hover {
+  color:#6db33f
+}
+
+.dropdown dt a:hover .details {
+  color:#fff
+}
+
+.dropdown dt a:hover {
+  color:#fff;
+  border:2px solid #6db33f;
+  background:#6db33f url(../imgs/arrowwhite.png) no-repeat 95% 50%
+}
+
+.dropdown dt a:active {
+  border-color:#568E32;
+  -webkit-box-shadow:inset 0 0 32px 0 rgba(0,0,0,0.34);
+  -moz-box-shadow:inset 0 0 32px 0 rgba(0,0,0,0.34);
+  box-shadow:inset 0 0 32px 0 rgba(0,0,0,0.34)
+}
+
+.dropdown dt a {
+  width:350px;
+  display:block;
+  border-radius:4px;
+  border:2px solid #C7D1D6;
+  background:#fff url(../imgs/arrow.png) no-repeat 95% 50%
+}
+
+.dropdown dt a span {
+  cursor:pointer;
+  display:inline-block;
+  padding:5px
+}
+
+span.details {
+  color:#91A0AA;
+  padding:0!important;
+}
+
+.dropdown dd ul {
+  background:#fff none repeat scroll 0 0;
+  border:1px solid #C7D1D6;
+  color:#4E5D6C;
+  display:none;
+  left:0;
+  position:absolute;
+  top:-3px;
+  width:352px;
+  min-width:170px;
+  list-style:none
+}
+
+.dropdown span.value {
+  display:none
+}
+
+.dropdown dd ul li a {
+  padding:5px;
+  display:block
+}
+
+.dropdown dd ul li a:hover {
+  background-color:#D5E9C9;
+  color:#4E5D6C
+}
+
+.dropdown img.flag {
+  border:none;
+  vertical-align:middle;
+  margin-left:10px
+}
+
+.flagvisibility {
+  display:none
+}
+
+/*==========  Toggle Button Styling  ==========*/
+.onoffswitch {
+  top: 140px;
+  width: 65px;
+  position: absolute;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none
+}
+
+.onoffswitch-checkbox {
+  display:none
+}
+
+.onoffswitch-label {
+  display:block;
+  overflow:hidden;
+  cursor:pointer;
+  border-radius:11px;
+  border:2px solid #FFF
+}
+
+.onoffswitch-inner {
+  width:200%;
+  display:block;
+  margin-left:-100%;
+  -moz-transition:margin .3s ease-in 0;
+  -webkit-transition:margin .3s ease-in 0;
+  -o-transition:margin .3s ease-in 0;
+  transition:margin .3s ease-in 0
+}
+
+.onoffswitch-inner:before,.onoffswitch-inner:after {
+  display:block;
+  float:left;
+  padding:0;
+  width:50%;
+  height:25px;
+  color:#fff;
+  font-size:13px;
+  font-weight:500;
+  line-height:25px;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box
+}
+
+.onoffswitch-inner:before {
+  content:"YES";
+  padding-left:7px;
+/* IE10 Consumer Preview */
+  background-image:-ms-linear-gradient(top,#528730 0%,#6DB33F 100%);
+/* Mozilla Firefox */
+  background-image:-moz-linear-gradient(top,#528730 0%,#6DB33F 100%);
+/* Opera */
+  background-image:-o-linear-gradient(top,#528730 0%,#6DB33F 100%);
+/* Webkit (Safari/Chrome 10) */
+  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#528730),color-stop(1,#6DB33F));
+/* Webkit (Chrome 11+) */
+  background-image:-webkit-linear-gradient(top,#528730 0%,#6DB33F 100%);
+/* W3C Markup, IE10 Release Preview */
+  background-image:linear-gradient(to bottom,#528730 0%,#6DB33F 100%)
+}
+
+.onoffswitch-inner:after {
+  content:"NO";
+  padding-right:7px;
+  color:#FFF;
+  text-align:right;
+/* IE10 Consumer Preview */
+  background-image:-ms-linear-gradient(top,#808E96 0%,#91A0AA 100%);
+/* Mozilla Firefox */
+  background-image:-moz-linear-gradient(top,#808E96 0%,#91A0AA 100%);
+/* Opera */
+  background-image:-o-linear-gradient(top,#808E96 0%,#91A0AA 100%);
+/* Webkit (Safari/Chrome 10) */
+  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#808E96),color-stop(1,#91A0AA));
+/* Webkit (Chrome 11+) */
+  background-image:-webkit-linear-gradient(top,#808E96 0%,#91A0AA 100%);
+/* W3C Markup, IE10 Release Preview */
+  background-image:linear-gradient(to bottom,#808E96 0%,#91A0AA 100%)
+}
+
+.onoffswitch-switch {
+  display:block;
+  top:0;
+  bottom:0;
+  right:35px;
+  width:13px;
+  height:13px;
+  margin:6px;
+  opacity:.7;
+  position:absolute;
+  background:#FFF;
+  border-radius:15px;
+  border:2px solid #FFF;
+  -moz-transition:all .5s ease-in 0;
+  -webkit-transition:all .5s ease-in 0;
+  -o-transition:all .5s ease-in 0;
+  transition:all .5s ease-in 0;
+  -webkit-box-shadow:1px 1px 10px 1px rgba(0,0,0,0.54);
+  -moz-box-shadow:1px 1px 10px 1px rgba(0,0,0,0.54);
+  box-shadow:1px 1px 10px 1px rgba(0,0,0,0.54)
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left:0
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right:0
+}
+
+/*=============================================
+=           Footer Buttons Style             =
+=============================================*/
+.modal-btn {
+  float: right;
+  width: 105px;
+  outline: none;
+  color: #4E5D6C;
+  font-size: 14px;
+  margin: 20px 0 0 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  -moz-border-radius: 5;
+  -webkit-border-radius: 5;
+  border-radius: 5;
+  border: solid #c7d1d6 2px;
+  padding: 5px 20px;
+  -webkit-background-size: 203% 100%;
+  background-size: 203% 100%;
+  background-image: -moz-linear-gradient(to right, #C7D1D6 50%, #6db33f 50%);
+  background-image: -o-linear-gradient(to right, #C7D1D6 50%, #6db33f 50%);
+  background-image: -webkit-linear-gradient(to right, #C7D1D6 50%, #6db33f 50%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #C7D1D6 50%), color-stop(1, #6db33f 50%));
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=#C7D1D6 50%, EndColorStr=#6db33f 50%)";
+  background-image: linear-gradient(to right, #C7D1D6 50%, #6db33f 50%);
+  -moz-transition: background-position 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.7s ease 0.1s;
+  -o-transition: background-position 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.7s ease 0.1s;
+  -webkit-transition: background-position 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.7s ease 0.1s;
+  transition: background-position 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.7s ease 0.1s
+}
+
+.modal-btn:disabled,.modal-btn:disabled:hover {
+  color:#91A0AA;
+  background:#fff;
+  border-color:#C7D1D6
+}
+
+.modal-btn:hover {
+  color:#fff;
+  border-color:#6db33f;
+  background-position:-97% 100%
+}
+
+.modal-btn:active,input[type="button"]:disabled:active {
+  border-color:#568E32;
+  -webkit-box-shadow:inset 0 0 32px 0 rgba(0,0,0,0.34);
+  -moz-box-shadow:inset 0 0 32px 0 rgba(0,0,0,0.34);
+  box-shadow:inset 0 0 32px 0 rgba(0,0,0,0.34)
+}
+
+.cancel-btn {
+  float:left;
+  margin-left:0
+}
+
+/*=============================================
+=            Animation CSS             =
+=============================================*/
+@-webkit-keyframes openBox {
+0% {
+  width:150px;
+  height:56px
+}
+
+100% {
+  width:100%;
+  height:100%;
+  margin-left:-285px;
+  margin-top:0
+}
+}
+
+.openBox {
+  color:#fff;
+  position:relative;
+  
+  -webkit-animation-name:openBox;
+  -moz-animation-name:openBox;
+  -ms-animation-name:openBox;
+  -o-animation-name:openBox;
+  animation-name:openBox;
+
+  -webkit-animation-duration:.7s;
+  -moz-animation-duration:.7s;
+  -ms-animation-duration:.7s;
+  -o-animation-duration:.7s;
+  animation-duration:.7s;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  -ms-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+}
+
+/*=============================================
+=            Media query CSS             =
+=============================================*/
+
+@media only screen and (max-width : 768px) {
+  header {
+    width: 320px;
+    font-size: 20px;
+  }
+  .main-container , .floating-container {
+    width: 320px;
+  }
+  .floating-container > .btn {
+    left: 25%;
+  }
+  .open-btn{
+    height: auto;
+    pointer-events: none;
+  }
+  .open-btn:after{
+    content: " is not currently supported on your Device. ";
+  }
+}
+
